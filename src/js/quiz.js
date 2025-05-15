@@ -10,16 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const reiniciarBotao = document.getElementById('inicio-btn');
 
     const questoes = [
-        "O que é um carro elétrico e como ele funciona?",
-        "Qual é a principal diferença entre um carro elétrico e um carro com motor a combustão?",
-        "Quais são as vantagens ambientais do uso de veículos elétricos?",
-        "Quais são os principais desafios para a adoção em massa de carros elétricos?",
-        "Quanto tempo leva, em média, para recarregar completamente um carro elétrico?",
-        "O que é autonomia em um carro elétrico e quais fatores a influenciam?",
-        "Qual é o custo médio de manutenção de um carro elétrico comparado ao de um carro tradicional?",
-        "Carros elétricos podem ser carregados em casa? Quais são os requisitos?",
-        "O que são baterias de íon de lítio e por que são usadas em veículos elétricos?",
-        "Quais são as marcas ou modelos mais populares de carros elétricos no mercado atualmente?"
+        "Você prefere um carro novo ou seminovo?",
+        "Qual o principal uso do carro?",
+        "Quantas pessoas costumam usar o carro com você?",
+        "Qual tipo de carro você prefere?",
+        "Você tem preferência por algum tipo de combustível?",
+        "Câmbio manual ou automático?",
+        "Qual é a sua prioridade para o carro?",
+        "Tem alguma marca que você prefere ou quer evitar?",
+        "Você precisa de algum recurso específico?",
+        "Você pretende financiar, pagar à vista ou fazer um consórcio?"
     ];
 
     let perguntas = 0;
