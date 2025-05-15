@@ -1,43 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo.css">
+
+    <title>Quiz</title>
 </head>
-<body onload="initQuiz()">
-  <header>
-    <nav>
-      <ul class="nav-list">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../pages/carros.html">Carros</a></li>
-        <li><a href="../pages/quiz.html">Quiz</a></li>
-        <li><a href="../pages/contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+<body>
 
-  <main>
-    <section class="quiz">
-      <h2>Questionário</h2>
-      <form id="quizForm">
-        <div class="pergunta">
-          <p>1. Você busca economia ou desempenho?</p>
-          <input type="radio" name="q1" value="economia"> Economia<br>
-          <input type="radio" name="q1" value="desempenho"> Desempenho<br>
+    <header>
+        <h1 id="logo">Questionário</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="./quiz.html">Quiz</a></li>
+                <li><a href="./carros.html">Carros</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="container-quiz">
+        <div class="quiz">
+            <h1>Questionário</h1>
+            <section id="container-perguntas">
+                <h2 id="pergunta">O que é um carro elétrico e como ele funciona?</h2>
+                <div id="container-respostas">
+                    <input type="text" id="resposta" placeholder="Digite sua resposta">
+                </div>
+                <button id="proximo">Próxima Pergunta</button>
+                <p id="message"></p>
+            </section>
+            <section id="container-resultado" class="hidden">
+                <h2>Resultado do Questionário</h2>
+                <ul id="lista-resultado"></ul>
+                <button id="incio-btn">Reiniciar </button>
+            </section>
         </div>
-        
-        <button type="submit">Ver Resultado</button>
-      </form>
-      <div id="resultado"></div>
-    </section>
-  </main>
 
-  <script src="script.js"></script>
+    </main>
 
- <footer>
-        <p>&copy; -2025- todos os direitos reservados</p>
-    </footer>
+ <script src="../js/quiz.js"></script>   
 </body>
 </html>

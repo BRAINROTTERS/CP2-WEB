@@ -1,71 +1,72 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const pergunta = document.getElementById('pergunta');
+    const resposta = document.getElementById('resposta');
+    const proximaPergunta = document.getElementById("proximo");
+    const mensagem = document.getElementById('message');
+    const containerPerguntas = document.getElementById('container-perguntas');
+    const containerResultado = document.getElementById('container-resultado');
+    const listaResultado = document.getElementById('lista-resultado');
+    const reiniciarBotao = document.getElementById('inicio-btn');
 
+    const questoes = [
+        "O que é um carro elétrico e como ele funciona?",
+        "Qual é a principal diferença entre um carro elétrico e um carro com motor a combustão?",
+        "Quais são as vantagens ambientais do uso de veículos elétricos?",
+        "Quais são os principais desafios para a adoção em massa de carros elétricos?",
+        "Quanto tempo leva, em média, para recarregar completamente um carro elétrico?",
+        "O que é autonomia em um carro elétrico e quais fatores a influenciam?",
+        "Qual é o custo médio de manutenção de um carro elétrico comparado ao de um carro tradicional?",
+        "Carros elétricos podem ser carregados em casa? Quais são os requisitos?",
+        "O que são baterias de íon de lítio e por que são usadas em veículos elétricos?",
+        "Quais são as marcas ou modelos mais populares de carros elétricos no mercado atualmente?"
+    ];
 
+    let perguntas = 0;
+    const respostas = [];
 
-function initQuiz() {
-  
-  alert("Seja bem-vindo ao questionário! Responda as perguntas abaixo para receber uma recomendação de carro.");
-
-  
-  var form = document.getElementById("quizForm");
-
-
-  form.addEventListener("submit", function (evento) {
-    evento.preventDefault(); 
-    var respostas = {}; 
-    var totalPerguntas = 10; 
-
-   
-    for (var i = 1; i <= totalPerguntas; i++) {
-      var resposta = document.querySelector("input[name='q" + i + "']:checked");
-      if (resposta) {
-        respostas["q" + i] = resposta.value; 
-      } else {
-        alert("Por favor, responda a pergunta " + i + ".");
-        return; 
-      }
+    function mostrarPergunta() {
+        if (perguntas < questoes.length) {
+            pergunta.textContent = questoes[perguntas];
+            resposta.value = '';
+            mensagem.textContent = '';
+        } else {
+            mostrarResultado();
+        }
     }
 
-   
-    var resultadoTexto = avaliarPerfil(respostas);
+    function mostrarResultado() {
+        containerPerguntas.classList.add('hidden');
+        containerResultado.classList.remove('hidden');
+        listaResultado.innerHTML = '';
 
-    
-    mostrarResultado(resultadoTexto);
+        questoes.forEach((questao, index) => {
+            const listaItem = document.createElement('li');
+            listaItem.innerHTML = `<strong>${questao}</strong><br> Sua Resposta: <span>${respostas[index]}</span>`;
+            listaResultado.appendChild(listaItem);
+        });
+    }
+
+    function nextQuestao() {
+        const respostaAtual = resposta.value.trim();
+        if (respostaAtual === '') {
+            mensagem.textContent = "Por favor, digite sua resposta";
+            return;
+        }
+        respostas.push(respostaAtual);
+        perguntas++;
+        mostrarPergunta();
+    }
+
+    function reiniciarQuiz() {
+        perguntas = 0;
+        respostas.length = 0;
+        containerResultado.classList.add('hidden');
+        containerPerguntas.classList.remove('hidden');
+        mostrarPergunta();
+    }
+
+    proximaPergunta.addEventListener('click', nextQuestao);
+    reiniciarBotao.addEventListener('click', reiniciarQuiz);
+
+    mostrarPergunta(); 
   });
-}
-
-
-function avaliarPerfil(respostas) {
-  var economia = 0;
-  var desempenho = 0;
-
- 
-  for (var chave in respostas) {
-    if (respostas[chave] === "economia") {
-      economia++;
-    } else if (respostas[chave] === "desempenho") {
-      desempenho++;
-    }
-  }
-
- 
-  if (economia > desempenho) {
-    return "Você se encaixa melhor com o Modelo A (econômico e eficiente).";
-  } else if (desempenho > economia) {
-    return "Você se encaixa melhor com o Modelo D (potente e esportivo).";
-  } else {
-    return "Você pode gostar do Modelo B ou C, com equilíbrio entre economia e desempenho.";
-  }
-}
-
-
-function mostrarResultado(texto) {
-  var resultadoDiv = document.getElementById("resultado");
-  resultadoDiv.innerHTML = "<p><strong>Resultado:</strong> " + texto + "</p>";
-}
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  if (document.getElementById("quizForm")) {
-    initQuiz();
-  }
-});
