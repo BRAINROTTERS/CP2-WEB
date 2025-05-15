@@ -25,16 +25,72 @@ header nav ul li a{
     text-decoration: none;
     color:#555;
     font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 header nav ul li a:hover{
-    color:goldenrod;
+    color:rgb(34, 111, 226);
     text-decoration: underline;
     border: 2px solid #ccc;
+    
 }
 header #logo{
-    color:blue;
+    color:rgb(36, 127, 211);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+}
+p#Descricaocarros{
+   display: flex;
+   padding: 20px;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-weight:500
+   
+}
+a.btn{
+    list-style: none;
+    text-decoration: none;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: rgb(36, 127, 211);
+    border: 2px solid rgb(36, 127, 211);
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+ section#conteudocarros{
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 20px;
+
+
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+img#teslas{
+    width: 600px;
+    height: 400px;
+    padding: 20px;
+}
+img#i3{
+     width: 600px;
+    height: 400px;
+    padding: 20px;
+}
+img#taycan{
+     width: 600px;
+    height: 400px;
+    padding: 20px;
+}
+img#seal{
+     width: 600px;
+    height: 400px;
+     padding: 20px;
+  }
 .banner #image{
     width: 100%;
     height: 100vh;
@@ -67,7 +123,7 @@ header #logo{
 }
 
 #container-perguntas h2{
-    color:green;
+    color:rgb(18, 91, 158);
     margin-bottom: 20px;
 }
 #container-respostas{
@@ -134,7 +190,7 @@ header #logo{
 }
 
 #inicio-btn {
-    background-color: #28a745;
+    background-color: #3173ee;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -146,7 +202,7 @@ header #logo{
 }
 
 #inicio-btn:hover {
-    background-color: #1e7e34;
+    background-color: #1167ca;
 }
 
 /*CONTATO*/
@@ -159,7 +215,7 @@ header #logo{
     margin-top: 100px;
 }
 .contato{
-    background-image: linear-gradient(#0056b3,#090840);
+    background-image: linear-gradient(rgb(36, 127, 211),rgb(36, 127, 211));
     width: 500px;
     height: 500px;
     border-radius: 20px;
@@ -179,7 +235,7 @@ header #logo{
     margin-bottom: 5px;
     font-size: 1.2rem;
     color:#fff;
-    text-transform: uppercase;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .control input{
     border: 2px solid #555;
@@ -199,7 +255,7 @@ header #logo{
 .form button{
     width: 80%;
     height: 30px;
-    background: #0056b3;
+    background:#1e72d1;
     color:#fff;
     font-size: 1.2rem;
     cursor: pointer;
@@ -208,8 +264,8 @@ header #logo{
 }
 
 .form button:hover{
-    background: #28a745;
-    color:#fff;
+    background: #ffffff;
+    color:#000000;
     transition: 0.3s;
 }
 
@@ -227,18 +283,11 @@ header #logo{
     position: absolute;
     margin-top: 5px;
 }
-/*LOCALIZA*/
-#mapid{
-    width: 1000px;
-    height: 600px;
-}
-#localzacao{
-    margin-top: 10px;
-    font-weight: 600;
-}   
+
 
 footer{
     margin-top: 30vh;
     display: flex;
     justify-content: center;
 }
+
