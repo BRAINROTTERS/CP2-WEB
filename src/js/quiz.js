@@ -1,3 +1,4 @@
+ alert("Seja bem-vindo ao questionário! Responda as perguntas abaixo para receber uma recomendação de carro.");
 document.addEventListener('DOMContentLoaded', () => {
     const pergunta = document.getElementById('pergunta');
     const resposta = document.getElementById('resposta');
